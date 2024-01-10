@@ -1,0 +1,1146 @@
+{
+	"name": "eGrass",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "debugEnabled",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 598621782749225
+		},
+		{
+			"eventType": "variable",
+			"name": "effectRadius",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 668328410190239
+		},
+		{
+			"eventType": "variable",
+			"name": "effectX",
+			"type": "number",
+			"initialValue": "-9999",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 557087219414949
+		},
+		{
+			"eventType": "variable",
+			"name": "effectY",
+			"type": "number",
+			"initialValue": "-9999",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 367067574550027
+		},
+		{
+			"eventType": "variable",
+			"name": "effectDefaultCoordinateValue",
+			"type": "number",
+			"initialValue": "-9999",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 611645688249702
+		},
+		{
+			"eventType": "variable",
+			"name": "generationRows",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 852681439949068
+		},
+		{
+			"eventType": "variable",
+			"name": "generationColumns",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 595001091898924
+		},
+		{
+			"eventType": "variable",
+			"name": "generationWidth",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 988813994691579
+		},
+		{
+			"eventType": "variable",
+			"name": "generationHeight",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 539579239000891
+		},
+		{
+			"eventType": "variable",
+			"name": "generationXDeltaMax",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365342173086436
+		},
+		{
+			"eventType": "variable",
+			"name": "generationYDeltaMax",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 525085687928654
+		},
+		{
+			"eventType": "variable",
+			"name": "generationYOffset",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907256148384301
+		},
+		{
+			"eventType": "comment",
+			"text": "SINGLE GRASS PIECE CREATION"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "objGrassPiece",
+					"sid": 695200266430942
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "objGrassPiece",
+					"sid": 697208256587779,
+					"parameters": {
+						"width": "generationWidth"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "objGrassPiece",
+					"sid": 646627714930999,
+					"parameters": {
+						"height": "generationHeight"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "objGrassPiece",
+					"sid": 765112729346424,
+					"parameters": {
+						"animation": "\"brightness_\"&str(choose(0,1,2,3))",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "objGrassPiece",
+					"sid": 380290512666248,
+					"parameters": {
+						"frame-number": "random(Self.AnimationFrameCount)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "objGrassPiece",
+					"sid": 643689561692548,
+					"parameters": {
+						"instance-variable": "zOrderIndex",
+						"value": "Self.Y"
+					}
+				},
+				{
+					"id": "set-wave",
+					"objectClass": "objGrassPiece",
+					"sid": 439918603588770,
+					"behaviorType": "Sine",
+					"parameters": {
+						"wave": "sine"
+					}
+				},
+				{
+					"id": "set-movement",
+					"objectClass": "objGrassPiece",
+					"sid": 612481353931861,
+					"behaviorType": "Sine",
+					"parameters": {
+						"movement": "angle"
+					}
+				},
+				{
+					"id": "set-magnitude",
+					"objectClass": "objGrassPiece",
+					"sid": 850060265241284,
+					"behaviorType": "Sine",
+					"parameters": {
+						"magnitude": "10+choose(1,-1)"
+					}
+				},
+				{
+					"id": "set-period",
+					"objectClass": "objGrassPiece",
+					"sid": 835048390678398,
+					"behaviorType": "Sine",
+					"parameters": {
+						"period": "8+choose(1,2)"
+					}
+				},
+				{
+					"id": "set-cycle-position",
+					"objectClass": "objGrassPiece",
+					"sid": 478937520286992,
+					"behaviorType": "Sine",
+					"parameters": {
+						"cycle-position": "random(1)"
+					}
+				},
+				{
+					"id": "update-initial-state",
+					"objectClass": "objGrassPiece",
+					"sid": 795850357120278,
+					"behaviorType": "Sine"
+				},
+				{
+					"id": "set-active",
+					"objectClass": "objGrassPiece",
+					"sid": 681128439526197,
+					"behaviorType": "Sine",
+					"parameters": {
+						"state": "active"
+					}
+				}
+			],
+			"sid": 600175479369362,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 826537701969833,
+							"parameters": {
+								"value": "random(100)>50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "objGrassPiece",
+							"sid": 377077556677061,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 136088966647584
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 584465246020247
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 247713438299402,
+							"parameters": {
+								"instance-variable": "angleInitialValue",
+								"value": "choose(2,1,0,-1,-2)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 201904152565867,
+							"parameters": {
+								"instance-variable": "angleOffsetMax",
+								"value": "5+random(3)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 716206168200247,
+							"parameters": {
+								"instance-variable": "angleOffset",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 162409644497108,
+							"parameters": {
+								"instance-variable": "angleOffsetAttackRate",
+								"value": "0.1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 994060760055559,
+							"parameters": {
+								"instance-variable": "angleOffsetDecayRate",
+								"value": "0.1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objGrassPiece",
+							"sid": 149906038481368,
+							"parameters": {
+								"instance-variable": "angleOffsetState",
+								"value": "\"IDLE\""
+							}
+						}
+					],
+					"sid": 201495231777989
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "SIGNEL EFFECT EMITTER CREATION"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "objEffectEmitter",
+					"sid": 473297296506156
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "objEffectEmitter",
+					"sid": 883211169142000,
+					"parameters": {
+						"scale": "0.5"
+					}
+				}
+			],
+			"sid": 370808925466669,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 722341856588168,
+							"parameters": {
+								"value": "debugEnabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "objEffectEmitter",
+							"sid": 788474894360751,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 863788901844359
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "START THE LAYOUT"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 498824719233037
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 136789779299106,
+					"parameters": {
+						"variable": "generationColumns",
+						"value": "ViewportWidth(0)/(generationWidth*0.5)"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "objGrassPiece",
+					"sid": 269511858200208
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 230457598957729,
+					"parameters": {
+						"variable": "effectX",
+						"value": "effectDefaultCoordinateValue"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 245402769798755,
+					"parameters": {
+						"variable": "effectY",
+						"value": "effectDefaultCoordinateValue"
+					}
+				}
+			],
+			"sid": 686632599909615,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "ACTUAL GENERATION OF GRASS PATCH"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 520566260867389,
+							"parameters": {
+								"name": "\"generateY\"",
+								"start-index": "0",
+								"end-index": "generationRows"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 483061104395632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 955999149793572,
+									"parameters": {
+										"name": "\"generateX\"",
+										"start-index": "0",
+										"end-index": "generationColumns"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 453236612981687,
+									"parameters": {
+										"object-to-create": "objGrassPiece",
+										"layer": "0",
+										"x": "loopindex(\"generateX\")*generationWidth+random(generationXDeltaMax)",
+										"y": "ViewportBottom(0)+generationYOffset-loopindex(\"generateY\")*generationHeight/7+random(generationYDeltaMax)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 834116456317085
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 330129434863506,
+							"parameters": {
+								"value": "debugEnabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "txtStatistics",
+							"sid": 406782215522701,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 151807173464050
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "UPDATE Z ORDER OF GRASS"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 965087612456373
+				}
+			],
+			"actions": [
+				{
+					"id": "sort-z-order",
+					"objectClass": "System",
+					"sid": 780265890660319,
+					"parameters": {
+						"object": "objGrassPiece",
+						"instance-variable": {
+							"name": "zOrderIndex",
+							"objectClass": "objGrassPiece"
+						}
+					}
+				}
+			],
+			"sid": 497563971356279,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 764818937948859,
+							"parameters": {
+								"object": "objEffectEmitter"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 875444944436692,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "objEffectEmitter",
+									"sid": 392321133945493,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "objEffectEmitter",
+									"sid": 847797847471938,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 619234187552938
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "STATE MACHINE FOR GRASS PIECES"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 198025693321969,
+							"parameters": {
+								"object": "objGrassPiece"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "objGrassPiece",
+							"sid": 392992765709705,
+							"parameters": {
+								"angle": "Self.angleInitialValue+Self.angleOffset*Self.angleOffsetDirection+Self.Sine.Value"
+							}
+						}
+					],
+					"sid": 251407942933400,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "WHILE IDLING, IF NEAR A SOURCE OF MOVEMENT SET THE STATE TO ATTACK"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "objGrassPiece",
+									"sid": 923796964385186,
+									"parameters": {
+										"instance-variable": "angleOffsetState",
+										"comparison": 0,
+										"value": "\"IDLE\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 264897306411939,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "objEffectEmitter",
+											"sid": 145683433980233,
+											"parameters": {
+												"which": "nearest",
+												"x": "objGrassPiece.X",
+												"y": "objGrassPiece.Y"
+											}
+										},
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 217375643233469,
+											"parameters": {
+												"value": "distance(objGrassPiece.X,objGrassPiece.Y,objEffectEmitter.x,objEffectEmitter.Y) < effectRadius"
+											}
+										},
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 606702850484901,
+											"parameters": {
+												"value": "effectX<>effectDefaultCoordinateValue&effectY<>effectDefaultCoordinateValue"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 901027407039805,
+											"parameters": {
+												"instance-variable": "angleOffsetDirection",
+												"value": "Self.X<objEffectEmitter.X ? -1 : 1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 403475081089338,
+											"parameters": {
+												"instance-variable": "angleOffsetState",
+												"value": "\"ATTACK\""
+											}
+										}
+									],
+									"sid": 717284618878243
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "WHILE ATTACKING, ADD TO THE OFFSET. IF THE OFFSET REACHES THE MAX ALLOWED THEN SET THE STATE TO DECAY"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "objGrassPiece",
+									"sid": 202689667643712,
+									"parameters": {
+										"instance-variable": "angleOffsetState",
+										"comparison": 0,
+										"value": "\"ATTACK\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 739880021578580,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 201366020179362,
+											"parameters": {
+												"value": "objGrassPiece.angleOffset<objGrassPiece.angleOffsetMax"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 526579573379123,
+											"parameters": {
+												"instance-variable": "angleOffset",
+												"value": "Self.angleOffset+Self.angleOffsetAttackRate+random(Self.angleOffsetMax)"
+											}
+										}
+									],
+									"sid": 682988170715620
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 362079129583022
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 718511058557412,
+											"parameters": {
+												"instance-variable": "angleOffsetState",
+												"value": "\"DECAY\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 331613960774939,
+											"parameters": {
+												"instance-variable": "angleOffset",
+												"value": "Self.angleOffsetMax"
+											}
+										}
+									],
+									"sid": 524842500249304
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "WHILE DECAYING, SUBTRACT FROM THE OFFSET. IF THE OFFSET REACHES ZERO THEN SET THE STATE TO IDLE"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "objGrassPiece",
+									"sid": 980650739846389,
+									"parameters": {
+										"instance-variable": "angleOffsetState",
+										"comparison": 0,
+										"value": "\"DECAY\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 163391928030564,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 494371527046410,
+											"parameters": {
+												"value": "objGrassPiece.angleOffset>0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 663816970321775,
+											"parameters": {
+												"instance-variable": "angleOffset",
+												"value": "Self.angleOffset-Self.angleOffsetDecayRate"
+											}
+										}
+									],
+									"sid": 536158485734285
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 713338467083418
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 647856070952448,
+											"parameters": {
+												"instance-variable": "angleOffsetState",
+												"value": "\"IDLE\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objGrassPiece",
+											"sid": 999534683848762,
+											"parameters": {
+												"instance-variable": "angleOffset",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 104429698502981
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 409582985461602,
+							"parameters": {
+								"value": "debugEnabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txtStatistics",
+							"sid": 754360616320736,
+							"parameters": {
+								"text": "\"GRASS PIECES: \"&objGrassPiece.Count&newline&\"FPS:          \"&fps&newline&\"AREA:         \"&effectRadius&newline&\"EFFECTS:      \"&objEffectEmitter.Count"
+							}
+						}
+					],
+					"sid": 875768914088607
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "MOUSE INPUT SYSTEM"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "mouse-button-is-down",
+					"objectClass": "Mouse",
+					"sid": 976916293546058,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 570067217249106,
+					"parameters": {
+						"variable": "effectX",
+						"value": "floor(Mouse.X)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 552876427736908,
+					"parameters": {
+						"variable": "effectY",
+						"value": "floor(Mouse.Y)"
+					}
+				}
+			],
+			"sid": 433394732680943,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 499194767378521
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 632561407516447,
+							"parameters": {
+								"object-to-create": "objEffectEmitter",
+								"layer": "0",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objEffectEmitter",
+							"sid": 986846196617188,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 138459736837098,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-released",
+					"objectClass": "Mouse",
+					"sid": 726283983064793,
+					"parameters": {
+						"mouse-button": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 122606057675639,
+					"parameters": {
+						"variable": "effectX",
+						"value": "effectDefaultCoordinateValue"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 884490018868800,
+					"parameters": {
+						"variable": "effectY",
+						"value": "effectDefaultCoordinateValue"
+					}
+				}
+			],
+			"sid": 860459561186761,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 851657636558668,
+							"parameters": {
+								"object": "objEffectEmitter",
+								"expression": "objEffectEmitter.type=1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "objEffectEmitter",
+							"sid": 346335470750748
+						}
+					],
+					"sid": 605875356259456,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "TOUCH INPU SYSTEM"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 218544500621470
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 520966336156527,
+					"parameters": {
+						"variable": "effectX",
+						"value": "floor(Touch.X)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 314045410053552,
+					"parameters": {
+						"variable": "effectY",
+						"value": "floor(Touch.Y)"
+					}
+				}
+			],
+			"sid": 735148924163400,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 800933728940933
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 516821003771195,
+							"parameters": {
+								"object-to-create": "objEffectEmitter",
+								"layer": "0",
+								"x": "Touch.X",
+								"y": "Touch.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "objEffectEmitter",
+							"sid": 609997198241997,
+							"parameters": {
+								"instance-variable": "type",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 700981194959318
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 548472320613074
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 539151757392058,
+					"parameters": {
+						"variable": "effectX",
+						"value": "effectDefaultCoordinateValue"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 370500461536951,
+					"parameters": {
+						"variable": "effectY",
+						"value": "effectDefaultCoordinateValue"
+					}
+				}
+			],
+			"sid": 442618884486191,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 479449291837770,
+							"parameters": {
+								"object": "objEffectEmitter",
+								"expression": "objEffectEmitter.type=1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "objEffectEmitter",
+							"sid": 530699809751753
+						}
+					],
+					"sid": 743699682926165
+				}
+			]
+		}
+	],
+	"sid": 886234230557849
+}

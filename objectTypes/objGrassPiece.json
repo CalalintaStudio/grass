@@ -1,0 +1,585 @@
+{
+	"name": "objGrassPiece",
+	"plugin-id": "Sprite",
+	"sid": 703738115763671,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "zOrderIndex",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 605682229435005
+		},
+		{
+			"name": "angleOffset",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 938821033629609
+		},
+		{
+			"name": "angleOffsetState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 109859756462668
+		},
+		{
+			"name": "angleOffsetDecayRate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 858656460014269
+		},
+		{
+			"name": "angleOffsetAttackRate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 221531807526652
+		},
+		{
+			"name": "angleOffsetMax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 782707300900270
+		},
+		{
+			"name": "angleOffsetDirection",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 317965506555383
+		},
+		{
+			"name": "angleInitialValue",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 929826951714954
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 179218272272048
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9659497,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2622979,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7719755,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8103330,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 330039,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6621138,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4744913,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1991106,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 106999994660417,
+				"name": "brightness_0",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1075002,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6156684,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7316106,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9663470,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2384405,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7343087,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3120099,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8672120,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 428827678200923,
+				"name": "brightness_1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1110524,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5050341,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1201577,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8857161,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2122580,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 743972,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1629910,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4842444,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 789628021566620,
+				"name": "brightness_2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3278436,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8771361,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1010624,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9405970,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4324423,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4325214,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7905556,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 10,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.98,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1888851,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 387315812061520,
+				"name": "brightness_3",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
