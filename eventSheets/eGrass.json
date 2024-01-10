@@ -304,10 +304,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "objGrassPiece",
-							"sid": 162409644497108,
+							"sid": 517553204996151,
 							"parameters": {
 								"instance-variable": "angleOffsetAttackRate",
-								"value": "0.1"
+								"value": "0.5"
 							}
 						},
 						{
@@ -330,6 +330,25 @@
 						}
 					],
 					"sid": 201495231777989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "objGrassPiece",
+							"sid": 732352962446749,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "objGrassPiece",
+							"sid": 253054810853310
+						}
+					],
+					"sid": 561897867751578
 				}
 			]
 		},
@@ -728,10 +747,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "objGrassPiece",
-											"sid": 526579573379123,
+											"sid": 656645620931754,
 											"parameters": {
 												"instance-variable": "angleOffset",
-												"value": "Self.angleOffset+Self.angleOffsetAttackRate+random(Self.angleOffsetMax)"
+												"value": "Self.angleOffset+Self.angleOffsetAttackRate"
 											}
 										}
 									],

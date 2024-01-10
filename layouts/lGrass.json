@@ -2,14 +2,48 @@
 	"name": "lGrass",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "Base",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 587515369279753,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.4,
+				0.9607843137254902,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Hud",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
 					"type": "txtStatistics",
 					"properties": {
-						"text": "Text",
+						"text": "",
 						"enable-bbcode": true,
 						"font": "monospace",
 						"size": 12,
@@ -52,7 +86,7 @@
 					}
 				}
 			],
-			"sid": 587515369279753,
+			"sid": 907778199851317,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -64,12 +98,12 @@
 				1
 			],
 			"backgroundColor": [
-				0.4,
-				0.9607843137254902,
-				1,
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
