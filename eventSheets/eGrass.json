@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "generationRows",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "40",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -122,6 +122,16 @@
 			"sid": 907256148384301
 		},
 		{
+			"eventType": "variable",
+			"name": "season",
+			"type": "string",
+			"initialValue": "WINTER",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 869710091803894
+		},
+		{
 			"eventType": "comment",
 			"text": "SINGLE GRASS PIECE CREATION"
 		},
@@ -154,9 +164,9 @@
 				{
 					"id": "set-animation",
 					"objectClass": "objGrassPiece",
-					"sid": 765112729346424,
+					"sid": 137594261321424,
 					"parameters": {
-						"animation": "\"brightness_\"&str(choose(0,1,2,3))",
+						"animation": "\"brightness_\"&str(choose(0,1,2,3,4))",
 						"from": "beginning"
 					}
 				},
@@ -330,6 +340,110 @@
 						}
 					],
 					"sid": 201495231777989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 647166601520060,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"SUMMER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 258492211314312,
+							"parameters": {
+								"color": "rgbEx(100, 100, 0)"
+							}
+						}
+					],
+					"sid": 553123099020748
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 672777652372272,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"FALL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 199490822273012,
+							"parameters": {
+								"color": "rgbEx(100, 50, 0)"
+							}
+						}
+					],
+					"sid": 509198409705763
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 993846962956482,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"WINTER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 773169911141303,
+							"parameters": {
+								"color": "rgbEx(0, 50, 100)"
+							}
+						}
+					],
+					"sid": 457068480483846
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 663223425183974,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"SPRING\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 384606218055614,
+							"parameters": {
+								"color": "rgbEx(0, 100, 50)"
+							}
+						}
+					],
+					"sid": 578805393178335
 				},
 				{
 					"eventType": "block",
@@ -886,9 +1000,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "txtStatistics",
-							"sid": 754360616320736,
+							"sid": 498768196479980,
 							"parameters": {
-								"text": "\"GRASS PIECES: \"&objGrassPiece.Count&newline&\"FPS:          \"&fps&newline&\"AREA:         \"&effectRadius&newline&\"EFFECTS:      \"&objEffectEmitter.Count"
+								"text": "\"GRASS PIECES: \"&objGrassPiece.Count&newline&\"FPS:          \"&fps&newline&\"AREA:         \"&effectRadius&newline&\"EFFECTS:      \"&objEffectEmitter.Count&newline&\"SEASON:       \"&season"
 							}
 						}
 					],
