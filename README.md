@@ -3,7 +3,8 @@
 Construct 3 Grass implementation
 
 Features:
-0. Generates a patch of grass
-1. Parametrized rows count
-2. Seasons, switching colors
-3. Force effect on mouse/touch input
+
+1. Generates a patch of grass
+2. Parametrized rows count
+3. Seasons, switching colors
+4. Force effect on mouse/touch input
