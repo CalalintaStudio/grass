@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "debugEnabled",
 			"type": "boolean",
-			"initialValue": "true",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "generationRows",
 			"type": "number",
-			"initialValue": "40",
+			"initialValue": "25",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -85,7 +85,7 @@
 			"eventType": "variable",
 			"name": "generationHeight",
 			"type": "number",
-			"initialValue": "100",
+			"initialValue": "150",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -208,10 +208,10 @@
 				{
 					"id": "set-magnitude",
 					"objectClass": "objGrassPiece",
-					"sid": 850060265241284,
+					"sid": 366732024911281,
 					"behaviorType": "Sine",
 					"parameters": {
-						"magnitude": "10+choose(1,-1)"
+						"magnitude": "10+choose(1,-1)*random(5)"
 					}
 				},
 				{
@@ -567,6 +567,118 @@
 			],
 			"sid": 686632599909615,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "SKY COLOR CHANGE"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 438125984144280,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"SUMMER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 620322915858558,
+							"parameters": {
+								"layer": "\"Base\"",
+								"color": "rgbEx(60, 100, 80)"
+							}
+						}
+					],
+					"sid": 648451764883916
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 483030354391116,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"FALL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 763982652863727,
+							"parameters": {
+								"layer": "\"Base\"",
+								"color": "rgbEx(100, 90, 90)"
+							}
+						}
+					],
+					"sid": 275323476547569
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 457182405668616,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"WINTER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 395809295739569,
+							"parameters": {
+								"layer": "\"Base\"",
+								"color": "rgbEx(80, 100, 100)"
+							}
+						}
+					],
+					"sid": 347833841056202
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 938042266260334,
+							"parameters": {
+								"variable": "season",
+								"comparison": 0,
+								"value": "\"SPRING\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 555872580679506,
+							"parameters": {
+								"layer": "\"Base\"",
+								"color": "rgbEx(90, 90, 100)"
+							}
+						}
+					],
+					"sid": 736548353432691
+				},
 				{
 					"eventType": "comment",
 					"text": "ACTUAL GENERATION OF GRASS PATCH"
