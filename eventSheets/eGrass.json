@@ -123,47 +123,81 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "season",
+			"name": "generationScaleChangeThreshold",
+			"type": "number",
+			"initialValue": "90",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 220183654266524
+		},
+		{
+			"eventType": "variable",
+			"name": "generationSeason",
 			"type": "string",
-			"initialValue": "WINTER",
+			"initialValue": "SPRING",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 869710091803894
 		},
 		{
+			"eventType": "variable",
+			"name": "generationAccentWidth",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 108831354810002
+		},
+		{
+			"eventType": "variable",
+			"name": "generationAccentHeight",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 518392960067273
+		},
+		{
+			"eventType": "variable",
+			"name": "generationAccentChanceThreshold",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 512064581098386
+		},
+		{
+			"eventType": "variable",
+			"name": "generationAccentScaleFactor",
+			"type": "number",
+			"initialValue": "1.8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 684145702255916
+		},
+		{
 			"eventType": "comment",
-			"text": "SINGLE GRASS PIECE CREATION"
+			"text": "SINGLE SOIL THING CREATION"
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "objGrassPiece",
+					"objectClass": "OnSoilThings",
 					"sid": 695200266430942
 				}
 			],
 			"actions": [
 				{
-					"id": "set-width",
-					"objectClass": "objGrassPiece",
-					"sid": 697208256587779,
-					"parameters": {
-						"width": "generationWidth"
-					}
-				},
-				{
-					"id": "set-height",
-					"objectClass": "objGrassPiece",
-					"sid": 646627714930999,
-					"parameters": {
-						"height": "generationHeight"
-					}
-				},
-				{
 					"id": "set-animation",
-					"objectClass": "objGrassPiece",
+					"objectClass": "OnSoilThings",
 					"sid": 137594261321424,
 					"parameters": {
 						"animation": "\"brightness_\"&str(choose(0,1,2,3,4))",
@@ -172,7 +206,7 @@
 				},
 				{
 					"id": "set-animation-frame",
-					"objectClass": "objGrassPiece",
+					"objectClass": "OnSoilThings",
 					"sid": 380290512666248,
 					"parameters": {
 						"frame-number": "random(Self.AnimationFrameCount)"
@@ -180,17 +214,17 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "objGrassPiece",
-					"sid": 643689561692548,
+					"objectClass": "OnSoilThings",
+					"sid": 705315389802461,
 					"parameters": {
-						"instance-variable": "zOrderIndex",
+						"instance-variable": "zSortingIndex",
 						"value": "Self.Y"
 					}
 				},
 				{
 					"id": "set-wave",
-					"objectClass": "objGrassPiece",
-					"sid": 439918603588770,
+					"objectClass": "OnSoilThings",
+					"sid": 158326492691766,
 					"behaviorType": "Sine",
 					"parameters": {
 						"wave": "sine"
@@ -198,8 +232,8 @@
 				},
 				{
 					"id": "set-movement",
-					"objectClass": "objGrassPiece",
-					"sid": 612481353931861,
+					"objectClass": "OnSoilThings",
+					"sid": 623378372630298,
 					"behaviorType": "Sine",
 					"parameters": {
 						"movement": "angle"
@@ -207,8 +241,8 @@
 				},
 				{
 					"id": "set-magnitude",
-					"objectClass": "objGrassPiece",
-					"sid": 366732024911281,
+					"objectClass": "OnSoilThings",
+					"sid": 432797640390929,
 					"behaviorType": "Sine",
 					"parameters": {
 						"magnitude": "10+choose(1,-1)*random(5)"
@@ -216,8 +250,8 @@
 				},
 				{
 					"id": "set-period",
-					"objectClass": "objGrassPiece",
-					"sid": 835048390678398,
+					"objectClass": "OnSoilThings",
+					"sid": 621534007958975,
 					"behaviorType": "Sine",
 					"parameters": {
 						"period": "8+choose(1,2)"
@@ -225,8 +259,8 @@
 				},
 				{
 					"id": "set-cycle-position",
-					"objectClass": "objGrassPiece",
-					"sid": 478937520286992,
+					"objectClass": "OnSoilThings",
+					"sid": 307845842453551,
 					"behaviorType": "Sine",
 					"parameters": {
 						"cycle-position": "random(1)"
@@ -234,14 +268,14 @@
 				},
 				{
 					"id": "update-initial-state",
-					"objectClass": "objGrassPiece",
-					"sid": 795850357120278,
+					"objectClass": "OnSoilThings",
+					"sid": 983303995872840,
 					"behaviorType": "Sine"
 				},
 				{
 					"id": "set-active",
-					"objectClass": "objGrassPiece",
-					"sid": 681128439526197,
+					"objectClass": "OnSoilThings",
+					"sid": 811459989931684,
 					"behaviorType": "Sine",
 					"parameters": {
 						"state": "active"
@@ -265,7 +299,7 @@
 					"actions": [
 						{
 							"id": "set-mirrored",
-							"objectClass": "objGrassPiece",
+							"objectClass": "OnSoilThings",
 							"sid": 377077556677061,
 							"parameters": {
 								"state": "mirrored"
@@ -273,6 +307,38 @@
 						}
 					],
 					"sid": 136088966647584
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 149489853104032,
+							"parameters": {
+								"value": "random(100)>generationScaleChangeThreshold"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "OnSoilThings",
+							"sid": 824360407912786,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "OnSoilThings",
+							"sid": 965575328407333,
+							"parameters": {
+								"height": "generationHeight*(1.2+choose(0.2,0.1,0.3,0))"
+							}
+						}
+					],
+					"sid": 691049363728777
 				},
 				{
 					"eventType": "block",
@@ -286,26 +352,26 @@
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 247713438299402,
+							"objectClass": "OnSoilThings",
+							"sid": 531034568944188,
+							"parameters": {
+								"instance-variable": "angleOffsetState",
+								"value": "\"IDLE\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OnSoilThings",
+							"sid": 174076103697595,
 							"parameters": {
 								"instance-variable": "angleInitialValue",
-								"value": "choose(2,1,0,-1,-2)"
+								"value": "choose(3,2,1,0,-1,-2,-3)"
 							}
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 201904152565867,
-							"parameters": {
-								"instance-variable": "angleOffsetMax",
-								"value": "5+random(3)"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 716206168200247,
+							"objectClass": "OnSoilThings",
+							"sid": 732225047149669,
 							"parameters": {
 								"instance-variable": "angleOffset",
 								"value": "0"
@@ -313,8 +379,17 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 517553204996151,
+							"objectClass": "OnSoilThings",
+							"sid": 867562117031199,
+							"parameters": {
+								"instance-variable": "angleOffsetMax",
+								"value": "10+random(3)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "OnSoilThings",
+							"sid": 861049459613747,
 							"parameters": {
 								"instance-variable": "angleOffsetAttackRate",
 								"value": "0.5"
@@ -322,20 +397,11 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 994060760055559,
+							"objectClass": "OnSoilThings",
+							"sid": 885100540800011,
 							"parameters": {
 								"instance-variable": "angleOffsetDecayRate",
-								"value": "0.1"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "objGrassPiece",
-							"sid": 149906038481368,
-							"parameters": {
-								"instance-variable": "angleOffsetState",
-								"value": "\"IDLE\""
+								"value": "0.5"
 							}
 						}
 					],
@@ -345,112 +411,8 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 647166601520060,
-							"parameters": {
-								"variable": "season",
-								"comparison": 0,
-								"value": "\"SUMMER\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "objGrassPiece",
-							"sid": 258492211314312,
-							"parameters": {
-								"color": "rgbEx(100, 100, 0)"
-							}
-						}
-					],
-					"sid": 553123099020748
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 672777652372272,
-							"parameters": {
-								"variable": "season",
-								"comparison": 0,
-								"value": "\"FALL\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "objGrassPiece",
-							"sid": 199490822273012,
-							"parameters": {
-								"color": "rgbEx(100, 50, 0)"
-							}
-						}
-					],
-					"sid": 509198409705763
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 993846962956482,
-							"parameters": {
-								"variable": "season",
-								"comparison": 0,
-								"value": "\"WINTER\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "objGrassPiece",
-							"sid": 773169911141303,
-							"parameters": {
-								"color": "rgbEx(0, 50, 100)"
-							}
-						}
-					],
-					"sid": 457068480483846
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 663223425183974,
-							"parameters": {
-								"variable": "season",
-								"comparison": 0,
-								"value": "\"SPRING\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-default-color",
-							"objectClass": "objGrassPiece",
-							"sid": 384606218055614,
-							"parameters": {
-								"color": "rgbEx(0, 100, 50)"
-							}
-						}
-					],
-					"sid": 578805393178335
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "is-on-screen",
-							"objectClass": "objGrassPiece",
+							"objectClass": "OnSoilThings",
 							"sid": 732352962446749,
 							"isInverted": true
 						}
@@ -458,7 +420,7 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "objGrassPiece",
+							"objectClass": "OnSoilThings",
 							"sid": 253054810853310
 						}
 					],
@@ -468,7 +430,196 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "SIGNEL EFFECT EMITTER CREATION"
+			"text": "SINGLE GRASS PIECE CREATION"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "objGrassPiece",
+					"sid": 970661333316289
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "objGrassPiece",
+					"sid": 395112264314085,
+					"parameters": {
+						"width": "generationWidth"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "objGrassPiece",
+					"sid": 352525542240191,
+					"parameters": {
+						"height": "generationHeight"
+					}
+				}
+			],
+			"sid": 556603271668563,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 964930124663187,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"SUMMER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 276328666572933,
+							"parameters": {
+								"color": "rgbEx(100, 100, 0)"
+							}
+						}
+					],
+					"sid": 434126607112493
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 161783886868766,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"FALL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 384702493920740,
+							"parameters": {
+								"color": "rgbEx(100, 50, 0)"
+							}
+						}
+					],
+					"sid": 530755490154028
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 834517126681267,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"WINTER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 803847214015953,
+							"parameters": {
+								"color": "rgbEx(0, 50, 100)"
+							}
+						}
+					],
+					"sid": 447174921369296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 504262695058778,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"SPRING\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "objGrassPiece",
+							"sid": 339114502360620,
+							"parameters": {
+								"color": "rgbEx(0, 100, 50)"
+							}
+						}
+					],
+					"sid": 372109679319770
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "SINGLE ACCENT PIECE CREATION"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "objAccentPiece",
+					"sid": 499272219653593
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "objAccentPiece",
+					"sid": 859124214421472,
+					"parameters": {
+						"animation": "generationSeason",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "objAccentPiece",
+					"sid": 875363202803965,
+					"parameters": {
+						"frame-number": "random(Self.AnimationFrameCount)"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "objAccentPiece",
+					"sid": 718195864722215,
+					"parameters": {
+						"width": "generationAccentWidth*generationAccentScaleFactor"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "objAccentPiece",
+					"sid": 757815225589779,
+					"parameters": {
+						"height": "generationAccentHeight*generationAccentScaleFactor"
+					}
+				}
+			],
+			"sid": 767040116824106
+		},
+		{
+			"eventType": "comment",
+			"text": "SINGLE EFFECT EMITTER CREATION"
 		},
 		{
 			"eventType": "block",
@@ -520,6 +671,147 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "TERRAIN CREATION"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "tilBackgroundSoil",
+					"sid": 391222464253665
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "tilBackgroundSoil",
+					"sid": 121518214673367,
+					"parameters": {
+						"width": "ViewportWidth(0)*1.5",
+						"height": "ViewportBottom(0)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "tilBackgroundSoil",
+					"sid": 800407344736311,
+					"parameters": {
+						"x": "ViewportWidth(0)/2",
+						"y": "ViewportBottom(0)"
+					}
+				}
+			],
+			"sid": 157913893826514,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 845460151435726,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"SUMMER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "tilBackgroundSoil",
+							"sid": 669345701881835,
+							"parameters": {
+								"color": "rgbEx(100, 100, 0)"
+							}
+						}
+					],
+					"sid": 336059728872200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 759678707635854,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"FALL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "tilBackgroundSoil",
+							"sid": 225703777804418,
+							"parameters": {
+								"color": "rgbEx(100, 50, 0)"
+							}
+						}
+					],
+					"sid": 447613740681478
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 114211809846877,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"WINTER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "tilBackgroundSoil",
+							"sid": 898018382514473,
+							"parameters": {
+								"color": "rgbEx(0, 50, 100)"
+							}
+						}
+					],
+					"sid": 859043185398052
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 322071133138228,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"SPRING\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "tilBackgroundSoil",
+							"sid": 356671158334520,
+							"parameters": {
+								"color": "rgbEx(0, 100, 50)"
+							}
+						}
+					],
+					"sid": 419235683495837
+				}
+			]
+		},
+		{
+			"eventType": "comment",
 			"text": "START THE LAYOUT"
 		},
 		{
@@ -543,7 +835,7 @@
 				},
 				{
 					"id": "destroy",
-					"objectClass": "objGrassPiece",
+					"objectClass": "OnSoilThings",
 					"sid": 269511858200208
 				},
 				{
@@ -579,7 +871,7 @@
 							"objectClass": "System",
 							"sid": 438125984144280,
 							"parameters": {
-								"variable": "season",
+								"variable": "generationSeason",
 								"comparison": 0,
 								"value": "\"SUMMER\""
 							}
@@ -606,7 +898,7 @@
 							"objectClass": "System",
 							"sid": 483030354391116,
 							"parameters": {
-								"variable": "season",
+								"variable": "generationSeason",
 								"comparison": 0,
 								"value": "\"FALL\""
 							}
@@ -633,7 +925,7 @@
 							"objectClass": "System",
 							"sid": 457182405668616,
 							"parameters": {
-								"variable": "season",
+								"variable": "generationSeason",
 								"comparison": 0,
 								"value": "\"WINTER\""
 							}
@@ -660,7 +952,7 @@
 							"objectClass": "System",
 							"sid": 938042266260334,
 							"parameters": {
-								"variable": "season",
+								"variable": "generationSeason",
 								"comparison": 0,
 								"value": "\"SPRING\""
 							}
@@ -718,18 +1010,55 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 453236612981687,
+									"sid": 803716218665169,
 									"parameters": {
 										"object-to-create": "objGrassPiece",
-										"layer": "0",
+										"layer": "\"Grass\"",
 										"x": "loopindex(\"generateX\")*generationWidth+random(generationXDeltaMax)",
+										"y": "ViewportBottom(0)+generationYOffset-loopindex(\"generateY\")*generationHeight/7+random(generationYDeltaMax)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "tilBackgroundSoil",
+									"sid": 641688803840097,
+									"parameters": {
+										"y": "objGrassPiece.Y"
+									}
+								}
+							],
+							"sid": 834116456317085
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 683287153199046,
+									"parameters": {
+										"value": "random(100)>generationAccentChanceThreshold"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 250542143392954,
+									"parameters": {
+										"object-to-create": "objAccentPiece",
+										"layer": "\"Grass\"",
+										"x": "random(ViewportWidth(0))",
 										"y": "ViewportBottom(0)+generationYOffset-loopindex(\"generateY\")*generationHeight/7+random(generationYDeltaMax)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
 								}
 							],
-							"sid": 834116456317085
+							"sid": 646061269349996
 						}
 					]
 				},
@@ -777,12 +1106,12 @@
 				{
 					"id": "sort-z-order",
 					"objectClass": "System",
-					"sid": 780265890660319,
+					"sid": 168592623264697,
 					"parameters": {
-						"object": "objGrassPiece",
+						"object": "OnSoilThings",
 						"instance-variable": {
-							"name": "zOrderIndex",
-							"objectClass": "objGrassPiece"
+							"name": "zSortingIndex",
+							"objectClass": "OnSoilThings"
 						}
 					}
 				}
@@ -845,17 +1174,17 @@
 							"objectClass": "System",
 							"sid": 198025693321969,
 							"parameters": {
-								"object": "objGrassPiece"
+								"object": "OnSoilThings"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-angle",
-							"objectClass": "objGrassPiece",
-							"sid": 392992765709705,
+							"objectClass": "OnSoilThings",
+							"sid": 955698005174995,
 							"parameters": {
-								"angle": "Self.angleInitialValue+Self.angleOffset*Self.angleOffsetDirection+Self.Sine.Value"
+								"angle": "Self.angleInitialValue+((Self.angleOffset+choose(0.1,0.2,0.3))*Self.angleOffsetDirection)+Self.Sine.Value"
 							}
 						}
 					],
@@ -870,8 +1199,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "objGrassPiece",
-									"sid": 923796964385186,
+									"objectClass": "OnSoilThings",
+									"sid": 104421293839645,
 									"parameters": {
 										"instance-variable": "angleOffsetState",
 										"comparison": 0,
@@ -891,8 +1220,8 @@
 											"sid": 145683433980233,
 											"parameters": {
 												"which": "nearest",
-												"x": "objGrassPiece.X",
-												"y": "objGrassPiece.Y"
+												"x": "OnSoilThings.X",
+												"y": "OnSoilThings.Y"
 											}
 										},
 										{
@@ -900,7 +1229,7 @@
 											"objectClass": "System",
 											"sid": 217375643233469,
 											"parameters": {
-												"value": "distance(objGrassPiece.X,objGrassPiece.Y,objEffectEmitter.x,objEffectEmitter.Y) < effectRadius"
+												"value": "distance(OnSoilThings.X,OnSoilThings.Y,objEffectEmitter.x,objEffectEmitter.Y) < effectRadius"
 											}
 										},
 										{
@@ -915,8 +1244,8 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 901027407039805,
+											"objectClass": "OnSoilThings",
+											"sid": 841807731281591,
 											"parameters": {
 												"instance-variable": "angleOffsetDirection",
 												"value": "Self.X<objEffectEmitter.X ? -1 : 1"
@@ -924,8 +1253,8 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 403475081089338,
+											"objectClass": "OnSoilThings",
+											"sid": 786356272549795,
 											"parameters": {
 												"instance-variable": "angleOffsetState",
 												"value": "\"ATTACK\""
@@ -945,8 +1274,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "objGrassPiece",
-									"sid": 202689667643712,
+									"objectClass": "OnSoilThings",
+									"sid": 471185025603006,
 									"parameters": {
 										"instance-variable": "angleOffsetState",
 										"comparison": 0,
@@ -963,17 +1292,17 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 201366020179362,
+											"sid": 298601475833374,
 											"parameters": {
-												"value": "objGrassPiece.angleOffset<objGrassPiece.angleOffsetMax"
+												"value": "OnSoilThings.angleOffset<OnSoilThings.angleOffsetMax"
 											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 656645620931754,
+											"objectClass": "OnSoilThings",
+											"sid": 963886907334926,
 											"parameters": {
 												"instance-variable": "angleOffset",
 												"value": "Self.angleOffset+Self.angleOffsetAttackRate"
@@ -994,8 +1323,8 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 718511058557412,
+											"objectClass": "OnSoilThings",
+											"sid": 502379085099786,
 											"parameters": {
 												"instance-variable": "angleOffsetState",
 												"value": "\"DECAY\""
@@ -1003,8 +1332,8 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 331613960774939,
+											"objectClass": "OnSoilThings",
+											"sid": 525375486222776,
 											"parameters": {
 												"instance-variable": "angleOffset",
 												"value": "Self.angleOffsetMax"
@@ -1024,8 +1353,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "objGrassPiece",
-									"sid": 980650739846389,
+									"objectClass": "OnSoilThings",
+									"sid": 194485588366338,
 									"parameters": {
 										"instance-variable": "angleOffsetState",
 										"comparison": 0,
@@ -1042,17 +1371,17 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 494371527046410,
+											"sid": 152207350839603,
 											"parameters": {
-												"value": "objGrassPiece.angleOffset>0"
+												"value": "OnSoilThings.angleOffset>0"
 											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 663816970321775,
+											"objectClass": "OnSoilThings",
+											"sid": 299202495552723,
 											"parameters": {
 												"instance-variable": "angleOffset",
 												"value": "Self.angleOffset-Self.angleOffsetDecayRate"
@@ -1073,8 +1402,8 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 647856070952448,
+											"objectClass": "OnSoilThings",
+											"sid": 457243174556520,
 											"parameters": {
 												"instance-variable": "angleOffsetState",
 												"value": "\"IDLE\""
@@ -1082,8 +1411,8 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "objGrassPiece",
-											"sid": 999534683848762,
+											"objectClass": "OnSoilThings",
+											"sid": 563003221080742,
 											"parameters": {
 												"instance-variable": "angleOffset",
 												"value": "0"
@@ -1112,9 +1441,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "txtStatistics",
-							"sid": 498768196479980,
+							"sid": 247796403845099,
 							"parameters": {
-								"text": "\"GRASS PIECES: \"&objGrassPiece.Count&newline&\"FPS:          \"&fps&newline&\"AREA:         \"&effectRadius&newline&\"EFFECTS:      \"&objEffectEmitter.Count&newline&\"SEASON:       \"&season"
+								"text": "\"THINGS ON SOIL: \"&OnSoilThings.Count&newline&\"FPS:            \"&fps&newline&\"AREA:           \"&effectRadius&newline&\"EFFECTS:        \"&objEffectEmitter.Count&newline&\"SEASON:         \"&generationSeason"
 							}
 						}
 					],
@@ -1174,10 +1503,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 632561407516447,
+							"sid": 315970786346104,
 							"parameters": {
 								"object-to-create": "objEffectEmitter",
-								"layer": "0",
+								"layer": "\"Hud\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
 								"create-hierarchy": false,
@@ -1261,7 +1590,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "TOUCH INPU SYSTEM"
+			"text": "TOUCH INPUT SYSTEM"
 		},
 		{
 			"eventType": "block",
@@ -1307,10 +1636,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 516821003771195,
+							"sid": 161294483846195,
 							"parameters": {
 								"object-to-create": "objEffectEmitter",
-								"layer": "0",
+								"layer": "\"Hud\"",
 								"x": "Touch.X",
 								"y": "Touch.Y",
 								"create-hierarchy": false,

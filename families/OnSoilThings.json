@@ -1,0 +1,75 @@
+{
+	"name": "OnSoilThings",
+	"plugin-id": "Sprite",
+	"sid": 339887095327426,
+	"instanceVariables": [
+		{
+			"name": "zSortingIndex",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 673440685209717
+		},
+		{
+			"name": "angleOffsetState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 323332694394705
+		},
+		{
+			"name": "angleOffset",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 136398602716371
+		},
+		{
+			"name": "angleOffsetMax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 608351541287568
+		},
+		{
+			"name": "angleOffsetDirection",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 579440246750926
+		},
+		{
+			"name": "angleOffsetDecayRate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 492947443474939
+		},
+		{
+			"name": "angleOffsetAttackRate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 423301010083467
+		},
+		{
+			"name": "angleInitialValue",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 382044552931985
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 418150792550382
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"objGrassPiece",
+		"objAccentPiece"
+	]
+}
