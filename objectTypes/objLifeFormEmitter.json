@@ -1,7 +1,7 @@
 {
-	"name": "objEffectEmitter",
+	"name": "objLifeFormEmitter",
 	"plugin-id": "Sprite",
-	"sid": 574440978635845,
+	"sid": 345434180067806,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,21 +9,14 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 615480595539866
-		},
-		{
-			"name": "life",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 752506636152818
+			"sid": 372258716115307
 		}
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 315086030078149
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 913170446599229
 		}
 	],
 	"effectTypes": [],
@@ -39,7 +32,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4246181,
+						"imageSpriteId": 9874815,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -52,7 +45,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5707996,
+						"imageSpriteId": 9775904,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -65,13 +58,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6969548,
+						"imageSpriteId": 9274261,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 616709705298184,
+				"sid": 198588396041940,
 				"name": "base",
 				"isLooping": true,
 				"isPingPong": true,

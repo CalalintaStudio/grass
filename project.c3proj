@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 37400,
+	"savedWithRelease": 37500,
 	"name": "grass",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -43,8 +43,29 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -58,7 +79,9 @@
 			"objEffectEmitter",
 			"Touch",
 			"tilBackgroundSoil",
-			"objAccentPiece"
+			"objAccentPiece",
+			"objLifeForm",
+			"objLifeFormEmitter"
 		],
 		"subfolders": []
 	},
