@@ -135,7 +135,7 @@
 			"eventType": "variable",
 			"name": "generationSeason",
 			"type": "string",
-			"initialValue": "SPRING",
+			"initialValue": "WINTER",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1182,6 +1182,33 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
+							"sid": 956802279325801,
+							"parameters": {
+								"variable": "generationSeason",
+								"comparison": 0,
+								"value": "\"SPRING\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-background-color",
+							"objectClass": "System",
+							"sid": 642476197005876,
+							"parameters": {
+								"layer": "\"Base\"",
+								"color": "rgbEx(90, 90, 100)"
+							}
+						}
+					],
+					"sid": 479690322566593
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
 							"sid": 438125984144280,
 							"parameters": {
 								"variable": "generationSeason",
@@ -1248,41 +1275,23 @@
 						{
 							"id": "set-layer-background-color",
 							"objectClass": "System",
-							"sid": 395809295739569,
+							"sid": 624514831822307,
 							"parameters": {
 								"layer": "\"Base\"",
-								"color": "rgbEx(80, 100, 100)"
+								"color": "rgbEx(60, 80, 100)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 234734298313161,
+							"parameters": {
+								"variable": "generationLifeFormMaxCount",
+								"value": "100"
 							}
 						}
 					],
 					"sid": 347833841056202
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 938042266260334,
-							"parameters": {
-								"variable": "generationSeason",
-								"comparison": 0,
-								"value": "\"SPRING\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-background-color",
-							"objectClass": "System",
-							"sid": 555872580679506,
-							"parameters": {
-								"layer": "\"Base\"",
-								"color": "rgbEx(90, 90, 100)"
-							}
-						}
-					],
-					"sid": 736548353432691
 				},
 				{
 					"eventType": "comment",
@@ -2474,6 +2483,123 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 630926862935277,
+							"parameters": {
+								"value": "generationSeason=\"WINTER\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 613103802395329,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 199307533459491,
+									"disabled": true,
+									"parameters": {
+										"value": "objLifeForm.Count<generationLifeFormMaxCount"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 978066665099196,
+									"parameters": {
+										"object-to-create": "objLifeForm",
+										"layer": "\"Hud\"",
+										"x": "ViewportRight(0)/2+(choose(ViewportRight(0)/2, ViewportRight(0)/3, ViewportRight(0)/4)*choose(1,-1))",
+										"y": "ViewportTop(0)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "objLifeForm",
+									"sid": 710424650564586,
+									"parameters": {
+										"instance-variable": "directionCoefficient",
+										"value": "Self.X>ViewportRight(0)/2 ? -1 : 1"
+									}
+								},
+								{
+									"id": "set-period",
+									"objectClass": "objLifeForm",
+									"sid": 304622767239714,
+									"behaviorType": "Sine",
+									"parameters": {
+										"period": "choose(4,5,6)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "objLifeForm",
+									"sid": 840940083450154,
+									"parameters": {
+										"angle": "random(360)"
+									}
+								},
+								{
+									"id": "set-movement",
+									"objectClass": "objLifeForm",
+									"sid": 882231423100338,
+									"behaviorType": "Sine",
+									"parameters": {
+										"movement": "size"
+									}
+								},
+								{
+									"id": "set-magnitude",
+									"objectClass": "objLifeForm",
+									"sid": 595168213218019,
+									"behaviorType": "Sine",
+									"parameters": {
+										"magnitude": "10"
+									}
+								}
+							],
+							"sid": 706878739727111,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 394958836225632,
+											"parameters": {
+												"value": "objLifeForm.directionCoefficient = -1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "objLifeForm",
+											"sid": 814496124564844,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 226501269920837
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -2873,6 +2999,178 @@
 										}
 									],
 									"sid": 438640659364508
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 928687828932672,
+							"parameters": {
+								"value": "generationSeason=\"WINTER\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "objLifeForm",
+							"sid": 139113549108872,
+							"parameters": {
+								"angle": "Self.Angle+(Self.directionCoefficient*choose(0.5,0.75,1))"
+							}
+						}
+					],
+					"sid": 955181408198225,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "objLifeForm",
+									"sid": 674141098361418,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"movementchange\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "objLifeForm",
+									"sid": 970003393585104,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "choose(1,2,3)",
+										"type": "once",
+										"tag": "\"movementchange\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "objLifeForm",
+									"sid": 206871470878989,
+									"parameters": {
+										"instance-variable": "directionCoefficient",
+										"value": "choose(1,-1)"
+									}
+								}
+							],
+							"sid": 633247676568475,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 372068570974596,
+											"parameters": {
+												"name": "\"generateeffect\"",
+												"start-index": "0",
+												"end-index": "choose(2,1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 189305369548492,
+											"parameters": {
+												"object-to-create": "objEffectEmitter",
+												"layer": "\"Hud\"",
+												"x": "objLifeForm.x",
+												"y": "objLifeForm.y+random(20)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objEffectEmitter",
+											"sid": 795091364197892,
+											"parameters": {
+												"instance-variable": "type",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "objEffectEmitter",
+											"sid": 391793030278325,
+											"parameters": {
+												"instance-variable": "life",
+												"value": "choose(20,50,100)"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "objEffectEmitter",
+											"sid": 199330584716737,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "objLifeForm",
+												"x": true,
+												"y": true,
+												"angle": false,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 520073084266803
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 815531903423864,
+											"parameters": {
+												"variable": "currentX",
+												"value": "objLifeForm.X"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 570643411644275,
+											"parameters": {
+												"variable": "currentY",
+												"value": "objLifeForm.Y"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "objLifeForm",
+											"sid": 918822238502501,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"movementexecution\"",
+												"property": "position",
+												"end-x": "currentX+choose(20,30,10)*Self.directionCoefficient",
+												"end-y": "currentY+choose(50,150,100)",
+												"time": "choose(2,2.2,2.4)",
+												"ease": "easeinoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 108166688511952
 								}
 							]
 						}
